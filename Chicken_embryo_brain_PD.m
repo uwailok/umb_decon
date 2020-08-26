@@ -47,7 +47,7 @@ rf_data_orig    = rf_data/(max(abs(rf_data(:))));  %%% Normalized the input data
 
 tol     = 1e-10;
 max_itr = 30;
-mu      = 1/10000;
+mu      = 1/100;
 
 % Main routine
 tic
@@ -82,10 +82,5 @@ ylabel('Axial (mm)')
 xlabel('Lateral (mm)')
 axis image
 title('PD image with TV')
-
-
-
-
-
 
 
