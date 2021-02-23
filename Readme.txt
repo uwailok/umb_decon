@@ -4,7 +4,7 @@
 
 3. The parameters for the input of deconvtv_umb.p as follows:
 
-Function detaol of deconvtv_umb(rf_data_orig, PSF_down,mu,max_itr, tol)
+Function of deconvtv_umb(rf_data_orig, PSF_down,mu,max_itr, tol)
 
 Input:      
 
