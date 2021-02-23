@@ -6,19 +6,8 @@ load("PD_brain_data.mat")
 rf_data         = padarray(PD_brain_data,[10 10],'both');
 [Nai,Nli,Nt1]   = size(rf_data);
 
-%% Generate PSF 
-wsizex  = 101;
-wsizez  = 101;
-x2      = -floor(wsizex/2):floor(wsizex/2);
-z2      = -floor(wsizez/2):floor(wsizez/2);
-[X2,Z2] = meshgrid(x2,z2);
-mu      = [0,0];
-Sigma   = [100,0;0,50];
-F       = mvnpdf([X2(:) Z2(:)],mu,Sigma);
-PSF     = reshape(F,wsizez,wsizex);
-PSF     = PSF./max(PSF(:));
-PSF_down = PSF(1:5:end,1:10:end);     
-PSF_down = PSF_down.^2;             %% PSF of power Doppler 
+%% download your point spread function 
+load PSF_down 
 
 
 %% Normalized and deconvolution %%%%%
